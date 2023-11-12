@@ -20,12 +20,14 @@ pairs = (max_num + 1) * max_num / 2
 
 for fNum in range(max_num):
     for sNum in range(fNum, max_num):
-        bi_summ = main.binary_summ(fNum, sNum)
+        print(fNum, sNum)
+        s, bi_summ = main.binary_summ(fNum, sNum)
 
         def_summ = fNum + sNum
         if def_summ != int(bi_summ, 2):
             print('Program worked incorrectly with numbers: {}, {}\n'.format(fNum, sNum))
             found = True
+            break
 
         nums_cnt += 1
         print('Loading ... {}%\n'.format(math.floor(nums_cnt / pairs * 100)))
